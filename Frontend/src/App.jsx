@@ -6,7 +6,7 @@ import Signup from "./components/Signup";
 import { Toaster } from "react-hot-toast";
 import { useAuth } from "./context/AuthProvider";
 import Requestafind from "./RequestAFind/Requestafind.jsx";
-import Upcomingevents from "./upcomingevents/Upcomingevents"; // Make sure you import the Upcomingevents component
+import UpcomingEvents from "./upcomingEvents/upcomingevents.jsx";
 
 function App() {
   const [authUser, setAuthUser] = useAuth();
@@ -26,9 +26,9 @@ function App() {
             path="/requestafind"
             element={authUser ? <Requestafind /> : <Navigate to="/signup" />}
           />
-          <Route
+         <Route
             path="/upcomingevents"
-            element={authUser ? <Upcomingevents /> : <Navigate to="/signup" />}  // Corrected route
+            element={authUser ? <UpcomingEvents /> : <Navigate to="/upcomingevents" />}
           />
         </Routes>
         <Toaster />
