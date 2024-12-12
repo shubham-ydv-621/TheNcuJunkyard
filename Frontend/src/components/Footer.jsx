@@ -1,17 +1,123 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Footer() {
+  // State to track the active section
+  const [activeSection, setActiveSection] = useState(null);
+
+  // Function to handle link clicks
+  const handleSectionClick = (section) => {
+    // Toggle the section open/close
+    setActiveSection(activeSection === section ? null : section);
+  };
+
   return (
     <div>
       <hr />
       <footer className="footer footer-center p-10 text-base-content rounded dark:bg-slate-900 dark:text-white">
         <nav className="grid grid-flow-col gap-4">
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <a
+            className="link link-hover"
+            onClick={() => handleSectionClick("about")}
+          >
+            About Us
+          </a>
+          <a
+            className="link link-hover"
+            onClick={() => handleSectionClick("contact")}
+          >
+            Contact
+          </a>
+          <a
+            className="link link-hover"
+            onClick={() => handleSectionClick("howItWorks")}
+          >
+            How It Works
+          </a>
+          <a
+            className="link link-hover"
+            onClick={() => handleSectionClick("privacy")}
+          >
+            Privacy Policy
+          </a>
         </nav>
-        <nav>
+
+        {/* Conditionally render content based on the active section */}
+        <div>
+          <div
+            className={`section-content transition-all duration-300 ease-in-out overflow-hidden ${
+              activeSection === "about" ? "max-h-[1000px]" : "max-h-0"
+            }`}
+          >
+            {activeSection === "about" && (
+              <div>
+                <h3 className="text-lg font-bold text-pink-500">About Us</h3>
+                <p className="text-gray-700 dark:text-white">
+                  We are a team of dedicated individuals passionate about enhancing
+                  the way you access books and educational materials. Our platform
+                  aims to bridge the gap between readers and rare or hard-to-find
+                  resources. Whether it's a textbook, reference material, or something
+                  unique, our goal is to make sure you get the books you need, when you
+                  need them. With an easy-to-use interface and a wide network, we strive
+                  to make learning more accessible and enjoyable for everyone.
+                </p>
+              </div>
+            )}
+          </div>
+
+          <div
+            className={`section-content transition-all duration-300 ease-in-out overflow-hidden ${
+              activeSection === "contact" ? "max-h-[1000px]" : "max-h-0"
+            }`}
+          >
+            {activeSection === "contact" && (
+              <div>
+                <h3 className="text-lg font-bold text-pink-500">Contact Us</h3>
+                <p className="text-gray-700 dark:text-white">
+                  You can reach us via email at{" "}
+                  <span className="font-semibold">shubham22csu444@ncuindia.edu</span> or
+                  through our social media handles.
+                </p>
+              </div>
+            )}
+          </div>
+
+          <div
+            className={`section-content transition-all duration-300 ease-in-out overflow-hidden ${
+              activeSection === "howItWorks" ? "max-h-[1000px]" : "max-h-0"
+            }`}
+          >
+            {activeSection === "howItWorks" && (
+              <div>
+                <h3 className="text-lg font-bold text-pink-500">How It Works</h3>
+                <p className="text-gray-700 dark:text-white">
+                  Our platform allows users to request items they can't find. Once a
+                  request is submitted, we try to source the item and notify the user
+                  through call when it's available.
+                </p>
+              </div>
+            )}
+          </div>
+
+          <div
+            className={`section-content transition-all duration-300 ease-in-out overflow-hidden ${
+              activeSection === "privacy" ? "max-h-[1000px]" : "max-h-0"
+            }`}
+          >
+            {activeSection === "privacy" && (
+              <div>
+                <h3 className="text-lg font-bold text-pink-500">Privacy Policy</h3>
+                <p className="text-gray-700 dark:text-white">
+                  We value your privacy. Your personal information is stored securely and
+                  is only used for the purpose of fulfilling your requests. We do not
+                  share your information with third parties without your consent.
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Social Media Links - Reduced margin */}
+        <nav className="mt-0"> {/* Reduced margin here */}
           <div className="grid grid-flow-col gap-4">
             <a>
               <svg
@@ -48,8 +154,12 @@ function Footer() {
             </a>
           </div>
         </nav>
-        <aside>
-          <p>Copyright © 2024 - All right reserved by ACME Industries Ltd</p>
+
+        {/* Copyright Section */}
+        <aside className="mt-0"> {/* Reduced margin here */}
+          <p className="text-center dark:text-white">
+            Copyright © 2024 - All rights reserved by shubham22csu444@ncuindia.edu
+          </p>
         </aside>
       </footer>
     </div>

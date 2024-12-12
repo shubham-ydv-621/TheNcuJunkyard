@@ -105,7 +105,7 @@ function requestafind() {
               </h3>
               <p className="mt-4 text-gray-700">
                 Thank you for submitting your request. We'll notify you once the
-                item is available.
+                item is available through call or you will recieve a mail from shubham22csu444@ncuindia.edu.
               </p>
               <button
                 onClick={() => setShowPopup(false)}
