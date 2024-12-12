@@ -7,13 +7,11 @@ function Banner() {
         <div className="w-full order-2 md:order-1 md:w-1/2 mt-12 md:mt-36">
           <div className="space-y-8">
             <h1 className="text-2xl md:text-4xl font-bold">
-              Hello, welcomes here to learn something{" "}
-              <span className="text-pink-500">new everyday!!!</span>
+            Give Your College Items a New Home at TheNcuJunkyard –{" "}
+              <span className="text-pink-500"> Buy, Sell, and Save!!</span>
             </h1>
             <p className="text-sm md:text-xl">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor,
-              et totam. Tempora amet atque expedita, quae corrupti totam sed
-              pariatur corporis at veniam est voluptas animi!
+            TheNcuJunkyard is your go-to marketplace for buying and selling gently used college essentials. Whether you're looking to pass on your old books, notes,drafters,labcoats or supplies, or find affordable study materials, we've got you covered. Join the community, save money, and give your items a second life!
             </p>
             <label className="input input-bordered flex items-center gap-2">
               <svg

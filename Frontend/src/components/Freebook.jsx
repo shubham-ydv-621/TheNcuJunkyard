@@ -62,11 +62,9 @@ function Freebook() {
     <>
       <div className=" max-w-screen-2xl container mx-auto md:px-20 px-4">
         <div>
-          <h1 className="font-semibold text-xl pb-2">Free Offered Courses</h1>
+          <h1 className="font-semibold text-xl pb-2">Free Items Offered</h1>
           <p>
-            lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Accusantium veritatis alias pariatur ad dolor repudiandae eligendi
-            corporis nulla non suscipit, iure neque earum?
+          Explore a variety of free college essentials – from books and notes to draft materials, all available at no cost! Perfect for students looking to save while getting what they need
           </p>
         </div>
 
