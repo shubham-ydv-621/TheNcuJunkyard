@@ -9,6 +9,7 @@ import { useAuth } from './context/AuthProvider';
 import Requestafind from './RequestAFind/requestafind';
 import UpcomingEvents from './upcomingEvents/upcomingevents';
 
+
 function App() {
   const [authUser, setAuthUser] = useAuth();
   console.log(authUser);

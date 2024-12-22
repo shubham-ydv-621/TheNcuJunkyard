@@ -1,6 +1,15 @@
 import React from "react";
 
 function Cards({ item }) {
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = 'TheNcuJunkyard\Frontend\public\operating system notes.pdf'; // Path to your PDF file
+    link.download = 'operating system notes.pdf'; // Name of the downloaded file
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <>
       <div className="mt-4 my-3 p-3">
@@ -16,7 +25,10 @@ function Cards({ item }) {
             <p>{item.title}</p>
             <div className="card-actions justify-between">
               <div className="badge badge-outline">${item.price}</div>
-              <div className=" cursor-pointer px-2 py-1 rounded-full border-[2px] hover:bg-pink-500 hover:text-white duration-200">
+              <div 
+                className="cursor-pointer px-2 py-1 rounded-full border-[2px] hover:bg-pink-500 hover:text-white duration-200"
+                onClick={handleDownload}
+              >
                 Buy Now
               </div>
             </div>
