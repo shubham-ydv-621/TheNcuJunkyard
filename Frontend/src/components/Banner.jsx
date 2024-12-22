@@ -33,7 +33,7 @@ function Banner() {
         <div className=" order-1 w-full mt-20 md:w-1/2">
           <img
             src={ncujunkimage}
-            className="md:w-[550px] md:h-[460px] md:ml-12"
+            className="md:w-[550px] md:h-[460px] md:ml-12 rounded-md rounded-lg shadow-lg transform transition duration-500 hover:-translate-y-2 hover:scale-105"
             alt=""
           />
         </div>

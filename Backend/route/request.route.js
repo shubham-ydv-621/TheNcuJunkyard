@@ -1,5 +1,4 @@
 // route/request.route.js
-
 import express from 'express';
 import { createRequest } from '../controller/request.controller.js';
 
@@ -9,4 +8,3 @@ const router = express.Router();
 router.post('/', createRequest);
 
 export default router;
-

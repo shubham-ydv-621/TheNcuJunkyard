@@ -2,13 +2,17 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
+// index.js or server.js
+
+dotenv.config();
+
 
 // Import routes
 import bookRoute from './route/book.route.js';
 import userRoute from './route/user.route.js';
 import requestRoute from './route/request.route.js';  // Import the request route
 
-dotenv.config();
+
 
 const app = express();
 
@@ -20,10 +24,10 @@ app.use(express.json());
 const PORT = process.env.PORT || 4000;
 const URI = process.env.MongoDBURI;
 
-// Connect to MongoDB
-mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(URI)
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.error('MongoDB connection error:', err));
+
 
 // Define routes
 app.use('/book', bookRoute);  // Book route

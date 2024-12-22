@@ -1,23 +1,22 @@
 // controller/request.controller.js
-
 import Request from '../model/request.model.js';
+import { sendEmail } from '../mailer.js';
 
-// Create a new request (handle form submission)
 export const createRequest = async (req, res) => {
   try {
-    const { userName, itemRequired, mobileNumber } = req.body;
+    const { userName, itemRequired, mobileNumber, userEmail } = req.body;
 
-    // Create a new request document using the data from the form
     const newRequest = new Request({
       userName,
       itemRequired,
       mobileNumber
     });
 
-    // Save the request to the database
     await newRequest.save();
 
-    // Send a response to the client
+    // Send email from user's email to your email
+    sendEmail(userEmail, 'New Item Request', `User: ${userName}\nItem Required: ${itemRequired}\nMobile Number: ${mobileNumber}`);
+
     res.status(201).json({ message: 'Request submitted successfully!' });
   } catch (error) {
     console.error('Error submitting request:', error);
