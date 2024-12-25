@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import path from 'path';
 // index.js or server.js
 
 dotenv.config();
@@ -33,6 +34,15 @@ mongoose.connect(URI)
 app.use('/book', bookRoute);  // Book route
 app.use('/user', userRoute);  // User route
 app.use('/request', requestRoute);  // Request route
+
+//deployment
+if(process.env.NODE_ENV === "production"){
+  const dirpath =path.resolve();
+  app.use(express.static("Frontend/dist"));
+  app.get("*",(req,res)=>{
+    res.sendFile(path.resolve(dirpath,"Frontend","dist","index.html"));
+  })
+}
 
 // Start the server
 app.listen(PORT, () => {
